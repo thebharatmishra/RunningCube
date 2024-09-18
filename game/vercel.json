@@ -1,0 +1,23 @@
+{
+  "routes": [
+    {
+      "src": "/game/(.*)",
+      "dest": "/game/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/game/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        }
+      ]
+    }
+  ]
+}
