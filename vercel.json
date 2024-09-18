@@ -2,14 +2,37 @@
   "version": 2,
   "builds": [
     {
-      "src": "game/index.html",
+      "src": "docs/index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "game/index.html"
+      "dest": "docs/index.html"
     }
   ]
+,
+  "headers": [
+    {
+      "source": "docs/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        }
+
+      ]
+    }
+  ]
+
+
 }
